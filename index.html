@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+    <!--Fitur responsive: lebar halaman mengikuti layar HP-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Kedai Roti Ropi - kedai roti online. web e-commerce dengan HTML, CSS, JavaScript.">
+    <title>Katalog - Kedai Roti Ropi</title>
+    <link rel="icon" type="image/png" href="logo ropi.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- =====MENU HEADER=====-->
+    <header class="kepala">
+        <div class="wadah kepala-isi">
+            <!--fitur logo-->
+            <a href="#/" class="logo" aria-label="Kedai Roti Ropi, ke halaman katalog">
+                <img src="logo ropi.jpg" alt="" width="44" height="44">
+                <span class="logo-nama">Kedai Roti Ropi</span>
+            </a>
+
+            <!--fitur pencarian menu-->
+             <form class="cari" id="form-cari" role="search">
+                <label class="hanya-pembaca-layar" for="input-cari">Cari menu</label>
+                <input type="search" id="input-cari" placeholder="Cari menu..." aria-label="Cari menu..." autocomplete="off">
+                <button type="submit" class="tombol-cari">
+                    <span>🔍 Cari</span>
+                </button>
+            </form>
+
+            <!--fitur navigasi-->
+            <nav class="navigasi" aria-label="Navigasi utama">
+                <a href="#/keranjang" data-nav="keranjang" class="nav-keranjang"
+                   aria-label="Keranjang belanja" title="Keranjang">
+                    <span aria-hidden="true">🛒</span>
+                    <span class="lencana" id="lencana-keranjang">0</span>
+                </a>
+                <a href="#/login" id="nav-masuk" aria-label="Masuk" title="Masuk">Masuk</a>
+                <button type="button" id="tombol-keluar"
+                        aria-label="Keluar" title="Keluar">Keluar</button>
+            </nav>
+        </div>
+    </header>
+
+<!--====ISI HALAMAN====-->
+<main class="wadah">
+
+    <!--====MENU KATALOG====-->
+    <section id="halaman-katalog">
+        <h1 class="hanya-pembaca-layar">Katalog menu Kedai Roti Ropi</h1>
+        <div class="tata-katalog">
+            <!--fitur filter kategori-->
+            <aside class="sisi" aria-label="Kategori menu">
+                <h2 class="sisi-judul">
+                    <img src="logo ropi.jpg" alt="" width="16" height="16">
+                    ✿- Kategori menu -✿
+                </h2>
+                
+                <button class="tombol-kategori-mobile" id="tombolKategori" aria-expanded="false" aria-controls="daftarKategori">
+                     ☷ KATEGORI MENU
+                    <span id="ikonKategori">⌄</span>
+                </button>
+
+                <div class="kategori" id="daftarKategori">
+                    <label class="sisi-item"><input type="radio" name="kategori" value="semua" checked><span>-Semua Menu-</span></label>
+                    <label class="sisi-item"><input type="radio" name="kategori" value="Roti Ropi"><span>-Roti Ropi-</span></label>
+                    <label class="sisi-item"><input type="radio" name="kategori" value="Minuman"><span>-Minuman-</span></label>
+                    <label class="sisi-item"><input type="radio" name="kategori" value="Paket 1"><span>-Paket 1-</span></label>
+                </div>
+            </aside>
+
+            <!--fitur daftar kartu menu-->
+            <div class="hasil">
+                <div class="grid-produk" id="grid-produk">
+
+                    <!--fitur kartu menu 1: Roti Ropi Rasa Butter-->
+                        <article class="kartu" data-id="1" data-nama="Ropi Butter" data-kategori="Roti Ropi" data-harga="10000"
+                            data-deskripsi="Roti lembut dengan isian Butter yang gurih.">
+                    <a class="kartu-tautan" href="#/detail/1">
+                        <div class="kartu-gambar">
+                            <div class="kartu-bingkai bingkai-foto">
+                                <img class="foto" src="Ropi Butter.jpeg" alt="">
+                                <strong class="kartu-label label-foto">✧ Ropi Butter ✧</strong>
+                            </div>
+                        </div>
+                        <div class="kartu-isi">
+                            <h2 class="kartu-nama">Roti Ropi Butter</h2>
+                            <p class="kartu-catatan">Roti kopi empuk dengan isian butter. Perpaduan rasa manis dan gurih dari butter.</p>
+                        </div>
+                    </a>
+                    <div class="kartu-bawah">
+                        <p class="harga">Rp10.000</p>
+                    </div>
+                </article>
+
+                <!--fitur kartu menu 2: Roti Ropi Coklat-->
+                <article class="kartu" data-id="2" data-nama="Ropi Coklat" data-kategori="Roti Ropi" data-harga="10000"
+                data-deskripsi="Roti lembut dengan isian coklat yang lumer.">
+                <a class="kartu-tautan" href="#/detail/2">
+                    <div class="kartu-gambar">
+                        <div class="kartu-bingkai bingkai-foto">
+                            <img class="foto" src="Ropi Coklat.jpeg" alt="">
+                            <strong class="kartu-label label-foto">✧ Ropi Coklat ✧</strong> 
+                        </div>
+                    </div>
+                    <div class="kartu-isi">
+                        <h2 class="kartu-nama">Roti Ropi Coklat</h2>
+                        <p class="kartu-catatan">Roti kopi empuk dengan isian coklat. Isian coklanya lumer di mulut.</p>
+                    </div>
+                </a>
+                <div class="kartu-bawah">
+                    <p class="harga">Rp10.000</p>
+                </div>
+            </article>
+            
+            <!--fitur kartu menu 3: Tea-->
+            <article class="kartu" data-id="3" data-nama="Iced Tea" data-kategori="Minuman" data-harga="6000"
+            data-deskripsi="Teh dengan es yang dingin dan menyegarkan.">
+            <a class="kartu-tautan" href="#/detail/3">
+                <div class="kartu-gambar">
+                    <div class="kartu-bingkai bingkai-foto">
+                        <img class="foto" src="Tea.jpeg" alt="">
+                        <strong class="kartu-label label-foto">✧ Iced Tea ✧</strong> 
+                    </div>
+                </div>
+                <div class="kartu-isi">
+                    <h2 class="kartu-nama">Iced Tea</h2>
+                    <p class="kartu-catatan">Teh dengan es, menciptakan sensasi segar yang dapat menghilangkan dahaga.</p>
+                </div>
+            </a>
+            <div class="kartu-bawah">
+                <p class="harga">Rp6.000</p>
+            </div>
+        </article>
+
+        <!--fitur kartu menu 4: Paket 1-->
+        <article class="kartu" data-id="4" data-nama="Paket 1" data-kategori="Paket 1" data-harga="15000"
+        data-deskripsi="Perpaduan kelembutan dan kesegaran.">
+        <a class="kartu-tautan" href="#/detail/4">
+            <div class="kartu-gambar">
+                <div class="kartu-bingkai bingkai-foto">
+                    <img class="foto" src="Tea&Ropi.jpeg" alt="">
+                    <strong class="kartu-label label-foto">✧ Iceed Tea & Ropi ✧</strong> 
+                </div>
+            </div>
+            <div class="kartu-isi">
+                <h2 class="kartu-nama">Tea & Ropi</h2>
+                <p class="kartu-catatan">Iced Tea & Ropi. Bebas pilih rasa Ropi, harga lebih bersahabat.</p>
+            </div>
+        </a>
+        <div class="kartu-bawah">
+            <p class="harga">Rp15.000</p>
+        </div>
+    </article>
+                </div>
+                <!--fitur pesan menu tidak ditemukan-->
+                <p class="kosong" id="katalog-kosong">Menu tidak ditemukan. Coba pilih kategori lain ya!</p>
+            </div>
+        </div>
+    </section>
+
+    <!--=====MENU LOGIN=====-->
+    <section id="halaman-login">
+        <div class="masuk">
+            <!--fitur foto login-->
+            <div class="masuk-visual">
+                <img src="Ropi Butter.jpeg" alt="Roti Ropi Butter">
+            </div>
+
+            <!--fitur formulir masuk-->
+            <form class="masuk-form" id="form-login">
+
+                <!--fitur logo dan judul login-->
+                <img class="masuk-logo" src="logo ropi.jpg" alt="Kedai Roti Ropi" width="72" height="72">
+                <h1>Selamat Datang!</h1>
+                <p class="masuk-info">~ Masuk untuk melanjutkan ~</p>
+
+                <div class="kolom-isian">
+                    <!--fitur isian username-->
+                    <label for="isian-username">Username</label>
+                    <input type="text" id="isian-username" placeholder="ota" autocomplete="username" required>
+                    <p class="pesan-galat">Username wjib diisi.</p>
+                </div>
+
+                <div class="kolom-isian">
+                    <!--fitur isian password dan pesan login salah-->
+                    <label for="isian-password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="isian-password" placeholder="mmm" autocomplete="current-password" required>
+                        <span id="toggle-password" onclick="togglePassword()">👁️</span>
+                    </div>
+                    <p class="pesan-galat">Password wajib diisi.</p>
+                    <p class="pesan-galat" id="login-salah" hidden>Username atau password salah.</p>
+
+                </div>
+                
+                <!--fitur tombol masuk-->
+                <button type="submit" class="tombol tombol-utama tombol-lebar tombol-kirim">- Masuk -</button>
+
+                <!--fitur kembali ke katalog-->
+                <a class="masuk-kembali" href="#/">Kembali ke katalog</a>
+            </form>
+        </div>
+    </section>
+
+    <!--MENU DETAIL MENU-->
+    <section id="halaman-detail">
+        <!--fitur kembali ke katalog-->
+        <a class="tautan-kembali" href="#/">Kembali ke katalog</a>
+        <!--fitur pesan menu tidak ditemukan-->
+        <p class="kosong" id="detail-tidak-ada" hidden>Menu tidak ditemukan.</p>
+
+        <article class="detail" id="isi-detail">
+            <!--fitur foto menu-->
+            <div class="detail-gambar">
+                <img class="foto" id="detail-gambar" src="Tea&Ropi.jpeg" alt="">
+            </div>
+
+            <div class="detail-info">
+                <!--fitur nama dan deskripsi menu-->
+                <h1 id="detail-nama"></h1>
+                <p class="detail-deskripsi" id="detail-deskripsi"></p>
+
+                <!--fitur kasir-->
+                <div class="kasir" role="group" aria-label="Rincian pesanan">
+                    <div class="kasir-judul">
+                        <span>Item</span>
+                        <span>Jumlah</span>
+                    </div>
+                    <div class="kasir-baris">
+                        <div class="kasir-info">
+                            <span class="kasir-nama" id="kasir-nama"></span>
+                            <span class="kasir-harga" id="kasir-harga"></span>
+                        </div>
+
+                        <div class="kasir-jumlah">
+                            <button type="button" id="tombol-kurang" aria-label="Kurangi jumlah">-</button>
+                            <label class="hanya-pembaca-layar" for="isian-jumlah">Jumlah</label>
+                            <input type="number" id="isian-jumlah" min="1" value="1">
+                            <button type="button" id="tombol-tambah" aria-label="Tambah jumlah">+</button>
+                        </div>
+                    </div>
+
+                    <div class="kasir-total">
+                        <span>Total bayar</span>
+                        <strong class="total-teks">Rp0</strong>
+                    </div>
+                </div>
+
+                <!--fitur tambah ke ranjang dan pesan sekarng-->
+                <p id="pesan-keranjang" class="kartu-catatan" role="status" aria-live="polite"></p>
+                <div class="detail-aksi">
+                    <button type="button" class="tombol-keranjang" id="tombol-keranjang">Tambah ke keranjang</button>
+                    <button type="button" class="tombol-pesan" id="tombol-pesan">
+                        <span>- Pesan Sekarang -</span>
+                    </button>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!--==MENU KERANJANG==-->
+    <section id="halaman-keranjang">
+        <h1 class="judul-halaman">Keranjang</h1>
+
+        <!--fitur keranjang kosong-->
+        <div class="kosong" id="keranjang-kosong">
+            <p>Keranjang masih kosong</p>
+            <a class="tombol tombol-utama" href="#/">Mulai belanja</a>
+        </div>
+
+        <div class="dua-kolom" id="keranjang-isi">
+            <!--fitur daftar barang keranjang-->
+            <div class="daftar-keranjang" id="daftar-keranjang"></div>
+
+            <!--fitur ringkasan keranjang-->
+            <aside class="struk struk-menempel" aria-label="Ringkasan-keranjang">
+                <h2>۶ৎ Ringkasan ۶ৎ</h2>
+                <div class="struk-baris"><span>Jumlah barang</span><span id="keranjang-jumlah">0</span></div>
+                <div class="struk-baris struk-total"><span>Total harga</span><span id="keranjang-subtotal">Rp0</span></div>
+                <div class="struk-aksi">
+                    <a class="tombol tombol-utama" href="#/checkout">Lanjut ke checkout</a>
+                    <a class="tombol" href="#/">Lanjut belanja</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!--==MENU CHECKOUT==-->
+    <section id="halaman-checkout">
+        <!--fitur kembali ke keranjang-->
+        <a class="tautan-kembali" href="#/keranjang">Kembali ke keranjang</a>
+        <h1 class="judul-halaman">۶ৎ Checkout ۶ৎ</h1>
+
+        <div class="dua-kolom">
+            <form id="form-checkout">
+
+                <!--fitur data pemesan-->
+                <section class="kotak" aria-labelledby="judul-data">
+                    <h2 class="kotak-judul"><span class="kotak-nomor">1</span>Kontak pemesan</h2>
+                    
+                    <div class="baris-isian">
+                        <div class="kolom-isian">
+                            <label for="isian-nama">Nama lengkap</label>
+                            <input type="text" id="isian-nama" autocomplete="name" required pattern="[A-Za-z . '\-]{3,}">
+                            <p class="pesan-galat">Nama wajib diisi, minimal 3 huruf (hanya huruf dan spasi).</p>
+                        </div>
+                        <div class="kolom-isian">
+                            <label for="isian-hp">Nomor HP</label>
+                            <input type="tel" id="isian-hp" autocomplete="tel" required pattern="(\+62|62|0)8[0-9]{8,11}">
+                            <p class="pesan-galat">Nomor HP waijb diisi, angka saja, diawali 08 atau +62</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!--fitur alamat pengiriman-->
+                <section class="kotak" aria-labelledby="judul-kirim">
+                    <h2 class="kotak-judul" id="judul-kirim"><span class="kotak-nomor">2</span>Alamat pengiriman</h2>
+
+                    <div class="kolom-isian">
+                        <label for="isian-alamat">Alamat lengkap</label>
+                        <textarea id="isian-alamat" rows="3" autocomplete="street-address" required minlength="10"></textarea>
+                        <p class="pesan-galat">Alamat waijb diisi lengkap (minimal 10 karakter).</p>
+                    </div>
+                    <div class="kolom-isian">
+                        <label for="isian-kota">Kecamatan/kota</label>
+                        <input type="text" id="isian-kota" autocomplete="address-level2" required minlength="3">
+                        <p class="pesan-galat">Kecamatan/kota wajib diisi.</p>
+                    </div>
+                </section>
+
+                <!--fitur metode pembayaran-->
+                <section class="kotak" aria-labelledby="judul-bayar">
+                    <h2 class="kotak-judul" id="judul-bayar"><span class="kotak-nomor">3</span>Pembayaran</h2>
+
+                    <div class="kolom-isian">
+                        <label for="isian-pembayaran">Metode pembayaran</label>
+                        <select id="isian-pembayaran" required>
+                            <option value="">Pilih metode pembayaran</option>
+                            <option value="Tunai di kedai">Tunai di kedai</option>
+                            <option value="QRIS">QRIS</option>
+                            <option value="Transfer bank">Transfer bank</option>
+                        </select>
+                        <p class="pesan-galat">Pilih metode pembayaran.</p>
+                    </div>
+
+                    <div class="kolom-isian">
+                        <label for="isian-catatan">Catatan<span class="redup">(opsional)</span></label>
+                        <textarea id="isian-catatan" rows="2" maxlength="200"></textarea>
+                    </div>
+                </section>
+            </form>
+
+            <!--fitur ringkasan pesanan dan tombol buat pesanan-->
+            <aside class="struk struk-menempel" aria-label="Ringkasan pesanan">
+                <h2>۶ৎ Ringkasan pesanan ۶ৎ</h2>
+                <div class="daftar-ringkas" id="ringkasan-checkout"></div>
+                <div class="struk-baris struk-total"><span>Total bayar</span><span id="checkout-total"></span></div>
+                <button type="submit" form="form-checkout"
+                class="tombol tombol-utama tombol-lebar tombol-kirim">Buat pesanan</button>
+            </aside>
+        </div>
+    </section>
+
+     <!-- ===== MENU KONFIRMASI PESANAN ===== --> 
+        <section id="halaman-sukses"> 
+            <!-- Fitur pesan pesanan tidak ditemukan --> 
+            <p class="kosong" id="sukses-tidak-ada" hidden> 
+                Pesanan tidak ditemukan. <a href="#/">Kembali ke katalog</a> 
+            </p> 
+ 
+            <div class="sukses" id="isi-sukses"> 
+                <!-- Fitur pesan pesanan berhasil dibuat --> 
+                <div class="sukses-ikon" aria-hidden="true"></div> 
+                <h1>~ Pesanan berhasil dibuat! ~</h1> 
+                <p id="sukses-pemesan"></p> 
+                <!-- Fitur rincian pesanan yang baru dibuat --> 
+                <div class="struk"> 
+                    <div class="daftar-ringkas" id="sukses-daftar"></div> 
+                    <div class="struk-baris struk-total"><span>Total bayar</span><span id="sukses-total"></span></div> 
+                </div> 
+                <!-- Fitur tombol pesan lagi --> 
+                <div class="sukses-tombol"> 
+                    <a class="tombol tombol-utama" href="#/">Pesan lagi</a> 
+                </div> 
+            </div> 
+        </section> 
+</main>
+
+    <!-- ====== MENU FOOTER ====== -->
+    <footer class="kaki">
+        <div class="wadah">
+            <div class="kaki-kolom">
+                <!--fitur profil kedai-->
+                <section>
+                    <p class="kaki-logo">
+                        <img src="logo ropi.jpg" alt="" width="40" height="40">
+                        Kedai Roti Ropi
+                    </p>
+                    <p>Ropi roti bikin hepi, dibuat dengan sepenuh hati. Pesan dimana saja, ambil di kedai tanpa menunggu antrian!</p>
+                </section>
+
+                <!--fitur jam dan kontak-->
+                <section>
+                    <h2 class="kaki-judul">Jam buka &amp; kontak</h2>
+                    <d1 class="kaki-daftar">
+                        <div>
+                            <dt>Senin - Sabtu</dt>
+                            <dd>14.30 - 17.30 WIB</dd>
+                        </div>
+                    </d1>
+                    <p class="kaki-info">Pesan online, ambil di kedai</p>
+                    <p class="kaki-info">Instagram: @Roti.Ropi</p>
+                    <p class="kaki-info">Lokasi: RSUD Limpung
+                        Jl. Dr.Sutomo No.17 A, Kec.Limpung</p>
+                </section>
+
+                <!--fitur metode pembayaran-->
+                <section>
+                    <h2 class="kaki-judul">Metode pembayaran</h2>
+                    <p class="kaki-info">Menerima pembayaran tunai &amp; digital:</p>
+                    <ul class="kaki-bayar">
+                        <li>TUNAI</li>
+                        <li>QRIS</li>
+                        <li>TRANSFER</li>
+                    </ul>
+                    </section>
+                    </div>
+
+                    <!--fitur hak cipta-->
+                    <p class="kaki-hakcipta">@UKKARFINAOCTA2026</p>
+                </div>
+            </div>
+        </footer>
+
+        <!--===== TEMPLATE BARIS BARANG =====-->
+        <template id="templat-baris">
+            <article class="baris-keranjang">
+                <div class="baris-gambar"><img class="foto" src="" alt=""></div>
+                <div class="baris-info">
+                    <a href="#/"></a>
+                    <p></p>
+                </div>
+                <div class="baris-aksi">
+                    <div class="pengatur-jumlah">
+                        <button type="button" data-aksi="kurang" aria-label="Kurangi jumlah">-</button>
+                        <span class="jumlah"></span>
+                        <button type="button" data-aksi="tambah" aria-label="Tambah jumlah">+</button>
+                    </div>
+                    <p class="baris-subtotal"></p>
+                    <button type="button" class="tombol-teks" data-aksi="hapus">Hapus</button>
+                </div>
+            </article>
+        </template>
+
+        <script src="script.js"></script>
+</body>
+</html>
